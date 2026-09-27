@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ehsan Rahman — Projects</title>
+<meta name="description" content="Selected public projects by Ehsan Rahman: Apple Watch and iOS apps, open-source league software, real-time chess and learning tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #5d5d5a;
+    --faint: #6b6b66;
+    --line: #e3e0d8;
+    --accent: #2f6d4f;
+    --accent-soft: #e4efe8;
+    --gold: #9a6a12;
+    --shadow: 0 1px 2px rgba(20, 20, 10, .04), 0 8px 24px rgba(20, 20, 10, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121311;
+      --surface: #1b1c1a;
+      --ink: #ecebe6;
+      --muted: #a9a8a1;
+      --faint: #8f8e88;
+      --line: #2c2d2a;
+      --accent: #7cc4a0;
+      --accent-soft: #1f2e26;
+      --gold: #d9a84a;
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; height: auto; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+  header.hero { padding-top: 72px; padding-bottom: 40px; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin: 0 0 16px;
+  }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; letter-spacing: -.01em; }
+  h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; margin: 0 0 20px; max-width: 24ch; }
+  .lede { font-size: 18px; color: var(--muted); max-width: 60ch; margin: 0 0 28px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 500;
+    text-decoration: none; border: 1px solid var(--line); background: var(--surface);
+  }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn:hover { border-color: var(--ink); }
+
+  .section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin: 56px 0 20px; }
+  .section-head h2 { font-size: 28px; margin: 0; }
+  .section-head p { margin: 0; color: var(--faint); font-size: 14px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  .rank {
+    font-family: Fraunces, Georgia, serif; font-size: 14px; color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .card h3 { font-size: 26px; margin: 4px 0 6px; line-height: 1.2; }
+  .tagline { font-weight: 500; margin: 0 0 12px; }
+  .card p.desc { color: var(--muted); margin: 0 0 16px; }
+  .points { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 10px; color: var(--muted); }
+  .points li { padding-left: 16px; position: relative; }
+  .points li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .points b { color: var(--ink); font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; padding: 0; list-style: none; }
+  .tags li {
+    font-size: 12px; padding: 3px 10px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); font-weight: 500;
+  }
+  .card-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; font-weight: 500; }
+  .card-links a { color: var(--accent); text-decoration: none; }
+  .card-links a:hover { text-decoration: underline; }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 6px;
+    background: var(--ink); color: var(--bg); margin-left: 8px; vertical-align: 4px;
+    font-family: Inter, system-ui, sans-serif; letter-spacing: 0;
+  }
+
+  /* Featured projects */
+  .featured { display: grid; gap: 24px; }
+  .feature { display: grid; grid-template-columns: 1fr; }
+  .feature .body { padding: 24px; }
+  .feature .shot { background: var(--accent-soft); display: flex; align-items: center; justify-content: center; }
+  .feature .shot img { width: 100%; }
+  .feature .shot.tall { padding: 24px 24px 0; align-items: flex-end; }
+  .feature .shot.tall img { width: auto; max-height: 360px; border-radius: 18px 18px 0 0; }
+  .feature .shot.poster { background: linear-gradient(#0c1110, #0a130f 50%, #080b0a); padding: 28px 24px; }
+  .feature .shot.poster img { width: auto; max-height: 480px; border-radius: 14px; }
+  @media (min-width: 860px) {
+    .feature .shot.poster img { max-height: 560px; }
+    .feature { grid-template-columns: 1.05fr 1fr; }
+    .feature .body { padding: 36px; align-self: center; }
+    .feature.flip .shot { order: -1; }
+    .feature .shot.tall img { max-height: 420px; }
+  }
+
+  /* More projects */
+  .grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 680px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+    .grid .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  }
+  .grid .card { padding: 24px; display: flex; flex-direction: column; }
+  .grid .card h3 { font-size: 22px; }
+  .grid .card .card-links { margin-top: auto; }
+  .companion { font-size: 14px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; margin: 0 0 16px; }
+
+  /* Origin */
+  .origin { display: grid; grid-template-columns: 1fr; }
+  .origin .body { padding: 28px 24px; }
+  .origin .photo img { width: 100%; height: 100%; object-fit: cover; }
+  @media (min-width: 860px) {
+    .origin { grid-template-columns: 1fr 1.2fr; }
+    .origin .body { padding: 36px; }
+  }
+  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 20px 0 22px; }
+  @media (min-width: 560px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+  .stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 13px; color: var(--faint); }
+  .quote { font-family: Fraunces, Georgia, serif; font-size: 19px; line-height: 1.4; margin: 0 0 16px; }
+
+  footer { padding-top: 56px; padding-bottom: 40px; color: var(--faint); font-size: 14px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <p class="eyebrow">Ehsan Rahman · Projects</p>
+  <h1>Hand-coded in&nbsp;2016.<br> Built with agents in&nbsp;2026.</h1>
+  <p class="lede">
+    Then, a Raspberry&nbsp;Pi till for my family’s restaurant. Now, native Apple apps and small,
+    dependency-light web tools for tennis, sleep, chess and 11+ exam prep, built alongside
+    LLM coding agents.
+  </p>
+  <nav class="links" aria-label="Profile links">
+    <a class="btn primary" href="https://github.com/EMRahman">GitHub</a>
+    <a class="btn" href="https://emrahman.github.io/website/">Personal site</a>
+    <a class="btn" href="#origin">Where it started</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="section-head">
+    <h2>Featured</h2>
+    <p>Ranked by polish and reach</p>
+  </div>
+
+  <div class="featured">
+
+    <article class="card feature">
+      <div class="body">
+        <div class="rank">01</div>
+        <h3>DeuceMate <span class="badge">On the App Store</span></h3>
+        <p class="tagline">Tennis scoring on your wrist, and an AI coach’s view of your game.</p>
+        <ul class="points">
+          <li><b>Score on your wrist.</b> Swipe up for your point, down for theirs, left to undo.
+            Tiebreaks, deuce and server rotation are handled without reaching for your phone.</li>
+          <li><b>Log how each point ended.</b> Tag the cause and the finishing shot, then one tap
+            turns the match into a structured coaching prompt for ChatGPT, Claude or Gemini.</li>
+          <li><b>See how your game is trending.</b> Double faults, unforced errors, forced errors
+            and winners, tracked across every match on the iPhone companion.</li>
+        </ul>
+        <p class="desc">Free on the App Store, with no ads and no tracking.</p>
+        <ul class="tags"><li>Swift</li><li>SwiftUI</li><li>watchOS</li><li>HealthKit</li><li>iOS 17</li></ul>
+        <div class="card-links">
+          <a href="https://apps.apple.com/app/id6757105622">App Store ↗</a>
+          <a href="https://emrahman.github.io/DeuceMate/">Website ↗</a>
+          <a href="https://github.com/EMRahman/DeuceMate">Source ↗</a>
+        </div>
+      </div>
+      <div class="shot poster">
+        <img src="assets/deucemate.webp" width="720" height="1564"
+             alt="DeuceMate marketing image: “Score on your wrist.” with the iPhone match list and trends beside the Apple Watch live scoreboard">
+      </div>
+    </article>
+
+    <article class="card feature flip">
+      <div class="body">
+        <div class="rank">02</div>
+        <h3>Somnus</h3>
+        <p class="tagline">Sleep debt, made visible.</p>
+        <p class="desc">
+          A native iOS app that reads Apple Watch sleep data and keeps a running total of how far
+          behind your target you are — how the gap is changing, and whether your habits are helping
+          you recover. Everything is computed on-device.
+        </p>
+        <ul class="tags"><li>Swift</li><li>SwiftUI</li><li>HealthKit</li><li>Swift Charts</li><li>100% on-device</li></ul>
+        <div class="card-links">
+          <a href="https://emrahman.github.io/Somnus/">Website ↗</a>
+          <a href="https://github.com/EMRahman/Somnus">Source ↗</a>
+        </div>
+      </div>
+      <div class="shot tall">
+        <img src="assets/somnus.webp" width="600" height="1303" loading="lazy"
+             alt="Somnus dashboard showing a sleep score of 94 alongside 4.6 hours of accumulated sleep debt">
+      </div>
+    </article>
+
+    <article class="card feature">
+      <div class="body">
+        <div class="rank">03</div>
+        <h3>DeuceLeague</h3>
+        <p class="tagline">Open-source club tennis league software.</p>
+        <p class="desc">
+          The database and the API for running a tennis league — standings, fixtures, promotion
+          and score reporting — so anyone can build the website, app or Telegram bot on top. Postgres
+          with row-level security, an OpenAPI-described HTTP API, a reference mobile website, and a
+          self-hosting guide for clubs.
+        </p>
+        <ul class="tags"><li>TypeScript</li><li>Postgres</li><li>Drizzle</li><li>Hono</li><li>Zod</li><li>Docker</li></ul>
+        <div class="card-links">
+          <a href="https://emrahman.github.io/DeuceLeague/for-coaches.html">For coaches ↗</a>
+          <a href="https://github.com/EMRahman/DeuceLeague">Source ↗</a>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="assets/deuceleague.webp" width="1400" height="995" loading="lazy"
+             alt="DeuceLeague mobile website: home screen, league tables and score reporting">
+      </div>
+    </article>
+
+  </div>
+
+  <div class="section-head">
+    <h2>Also worth a look</h2>
+    <p>Live on the web — no install, no account</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="rank">04</div>
+      <h3>Farboard</h3>
+      <p class="tagline">Chess with a friend, near or far.</p>
+      <p class="desc">
+        Create an invite, your opponent scans a QR code, and you each play on your own device.
+        End-to-end encrypted moves, take-back and draw requests, and games that survive reloads,
+        sleeping phones and patchy networks.
+      </p>
+      <p class="companion">
+        Companion: <a href="https://emrahman.github.io/ChessTracker/">ChessTracker</a> mirrors a game
+        played with real pieces on a real table — legal moves, notation and material count, no engine.
+      </p>
+      <ul class="tags"><li>JavaScript</li><li>Cloudflare Workers</li><li>E2E encryption</li></ul>
+      <div class="card-links">
+        <a href="https://farboard.ehsanr-web.workers.dev/">Play ↗</a>
+        <a href="https://github.com/EMRahman/Farboard">Source ↗</a>
+      </div>
+    </article>
+
+
+    <article class="card">
+      <div class="rank">05</div>
+      <h3>11+ Vocab Vault</h3>
+      <p class="tagline">Vocabulary practice for 8–11 year olds.</p>
+      <p class="desc">
+        497 curated words for 11+ creative writing, with definitions, British-English audio,
+        six quiz types, mastery tracking and a library of 35 short stories that together use
+        every word. Zero dependencies.
+      </p>
+      <p class="companion">
+        Companion: <a href="https://emrahman.github.io/11PlusMathsVault/">11+ Maths Vault</a> —
+        “Walk Mode” verbal questions on the go, “Desk Mode” written ones at home.
+      </p>
+      <ul class="tags"><li>Vanilla JS</li><li>No build step</li><li>Offline progress</li></ul>
+      <div class="card-links">
+        <a href="https://emrahman.github.io/11PlusVocabVault/">Open app ↗</a>
+        <a href="https://github.com/EMRahman/11PlusVocabVault">Source ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="rank">06</div>
+      <h3>The Small Agent Stack</h3>
+      <p class="tagline">A modular alternative to an all-in-one agent setup.</p>
+      <p class="desc">
+        A plain-language guide to replacing a bundled OpenClaw install with independent parts —
+        Pi for the agent and sessions, cron for schedules, Telegram for messaging, cost tracking —
+        plus a migration prompt and a sourced essay on the trade-offs.
+      </p>
+      <ul class="tags"><li>AI agents</li><li>Research</li><li>Static site + tests</li></ul>
+      <div class="card-links">
+        <a href="https://emrahman.github.io/SmallAgentStack/">Read the guide ↗</a>
+        <a href="https://github.com/EMRahman/SmallAgentStack">Source ↗</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="section-head" id="origin">
+    <h2>Where it started</h2>
+    <p>2016 · written by hand, before LLMs</p>
+  </div>
+
+  <article class="card origin">
+    <div class="photo">
+      <img src="assets/piorder.webp" width="624" height="434" loading="lazy"
+           alt="A Pipsta thermal printer on a Raspberry Pi printing order tickets in the restaurant kitchen">
+    </div>
+    <div class="body">
+      <h3>PiOrder</h3>
+      <p class="quote">A Raspberry&nbsp;Pi till, kitchen printer and online ordering system that ran my father’s restaurant for three and a half years.</p>
+      <p class="desc">
+        Tablets for waiters, Pipsta printers at the bar and in the kitchen, Stripe for online
+        payments — and no database, just files, Bash, Awk and cron. Featured in
+        <a href="https://www.raspberrypi.org/magpi-issues/MagPi57.pdf"><em>The MagPi</em>, issue 57</a>.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>12,738</b><span>orders printed</span></div>
+        <div class="stat"><b>1,201</b><span>online orders</span></div>
+        <div class="stat"><b>0</b><span>hardware failures</span></div>
+        <div class="stat"><b>46★</b><span>14 forks</span></div>
+      </div>
+      <ul class="tags"><li>Raspberry Pi</li><li>PHP</li><li>jQuery</li><li>Python</li><li>Bash</li></ul>
+      <div class="card-links">
+        <a href="https://github.com/EMRahman/PiOrder">Source ↗</a>
+        <a href="https://www.youtube.com/watch?v=bYomIR-4Y0o">Video ↗</a>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer class="wrap">
+  More public projects on <a href="https://github.com/EMRahman?tab=repositories">GitHub</a>.
+</footer>
+
+</body>
+</html>
