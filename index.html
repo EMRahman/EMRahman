@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ehsan Rahman — Projects</title>
-<meta name="description" content="Selected public projects by Ehsan Rahman: Apple Watch and iOS apps, open-source league software, real-time chess and learning tools.">
+<meta name="description" content="Selected public projects by Ehsan Rahman: Apple Watch and iOS apps, browser games, real-time chess, learning tools and open-source league software.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -97,6 +97,10 @@
     background: var(--ink); color: var(--bg); margin-left: 8px; vertical-align: 4px;
     font-family: Inter, system-ui, sans-serif; letter-spacing: 0;
   }
+  .badge.wip { background: transparent; color: var(--gold); border: 1px solid var(--gold); padding: 1px 8px; }
+  .status { margin: 0 0 16px; padding-left: 14px; border-left: 3px solid var(--gold); color: var(--muted); }
+  .status b { color: var(--gold); font-weight: 600; }
+  .card.wip { border-style: dashed; border-color: var(--gold); }
 
   /* Featured projects */
   .featured { display: grid; gap: 24px; }
@@ -151,9 +155,9 @@
   <p class="eyebrow">Ehsan Rahman · Projects</p>
   <h1>Hand-coded in&nbsp;2016.<br> Built with agents in&nbsp;2026.</h1>
   <p class="lede">
-    Then, a Raspberry&nbsp;Pi till for my family’s restaurant. Now, native Apple apps and small,
-    dependency-light web tools for tennis, sleep, chess and 11+ exam prep, built alongside
-    LLM coding agents.
+    Then, a Raspberry&nbsp;Pi till for my family’s restaurant. Now, native Apple apps, browser
+    games and small, dependency-light web tools for tennis, sleep, chess and 11+ exam prep,
+    built alongside LLM coding agents.
   </p>
   <nav class="links" aria-label="Profile links">
     <a class="btn primary" href="https://github.com/EMRahman">GitHub</a>
@@ -221,29 +225,6 @@
       </div>
     </article>
 
-    <article class="card feature">
-      <div class="body">
-        <div class="rank">03</div>
-        <h3>DeuceLeague</h3>
-        <p class="tagline">Open-source club tennis league software.</p>
-        <p class="desc">
-          The database and the API for running a tennis league — standings, fixtures, promotion
-          and score reporting — so anyone can build the website, app or Telegram bot on top. Postgres
-          with row-level security, an OpenAPI-described HTTP API, a reference mobile website, and a
-          self-hosting guide for clubs.
-        </p>
-        <ul class="tags"><li>TypeScript</li><li>Postgres</li><li>Drizzle</li><li>Hono</li><li>Zod</li><li>Docker</li></ul>
-        <div class="card-links">
-          <a href="https://emrahman.github.io/DeuceLeague/for-coaches.html">For coaches ↗</a>
-          <a href="https://github.com/EMRahman/DeuceLeague">Source ↗</a>
-        </div>
-      </div>
-      <div class="shot">
-        <img src="assets/deuceleague.webp" width="1400" height="995" loading="lazy"
-             alt="DeuceLeague mobile website: home screen, league tables and score reporting">
-      </div>
-    </article>
-
   </div>
 
   <div class="section-head">
@@ -254,7 +235,7 @@
   <div class="grid">
 
     <article class="card">
-      <div class="rank">04</div>
+      <div class="rank">03</div>
       <h3>Farboard</h3>
       <p class="tagline">Chess with a friend, near or far.</p>
       <p class="desc">
@@ -273,6 +254,32 @@
       </div>
     </article>
 
+    <article class="card">
+      <div class="rank">04</div>
+      <h3>Side Quest</h3>
+      <p class="tagline">A pocket arcade of seven browser games.</p>
+      <p class="desc">
+        Battleship, Connect Four, Go, memory match, Asteroids and two takes on Snake. Each is a
+        single self-contained HTML file that plays with mouse, keyboard or touch on desktop,
+        iPhone and iPad — no installs, no accounts, no dependencies.
+      </p>
+      <p class="companion">
+        The line-up:
+        <a href="https://emrahman.github.io/Games/battleship.html">Northstar</a>,
+        <a href="https://emrahman.github.io/Games/asteroid.html">Asteroids</a>,
+        <a href="https://emrahman.github.io/Games/connect4.html">Fourfold</a>,
+        <a href="https://emrahman.github.io/Games/go.html">Kado</a>,
+        <a href="https://emrahman.github.io/Games/memory_match.html">Recall Club</a>,
+        <a href="https://emrahman.github.io/Games/snake.html">Neon Coil</a> and
+        <a href="https://emrahman.github.io/Games/snake_nokia.html">3210 Snake</a> (the original
+        84 × 48 Nokia playfield).
+      </p>
+      <ul class="tags"><li>Vanilla JS</li><li>Single-file HTML</li><li>Zero dependencies</li><li>Touch ready</li></ul>
+      <div class="card-links">
+        <a href="https://emrahman.github.io/Games/">Play ↗</a>
+        <a href="https://github.com/EMRahman/Games">Source ↗</a>
+      </div>
+    </article>
 
     <article class="card">
       <div class="rank">05</div>
@@ -311,6 +318,37 @@
     </article>
 
   </div>
+
+  <div class="section-head">
+    <h2>Under construction</h2>
+    <p>Migrating to Cloudflare · running simulations</p>
+  </div>
+
+  <article class="card feature wip">
+    <div class="body">
+      <h3>DeuceLeague <span class="badge wip">Under construction</span></h3>
+      <p class="tagline">Open-source club tennis league software.</p>
+      <p class="status">
+        <b>Right now:</b> migrating to Cloudflare, one Worker and one D1 database per club in place
+        of a Docker and Postgres VPS, and running club-season simulations against it.
+      </p>
+      <p class="desc">
+        Players see their matches and tables, report scores and agree results from their phones,
+        while the coach runs the league with a coding agent. Underneath is an OpenAPI-described
+        HTTP API, so anyone can build a website, app or bot on top, with a reference player
+        website and a coach’s site included.
+      </p>
+      <ul class="tags"><li>TypeScript</li><li>Cloudflare Workers</li><li>D1</li><li>Zod</li><li>OpenAPI</li></ul>
+      <div class="card-links">
+        <a href="https://emrahman.github.io/DeuceLeague/for-coaches.html">For coaches ↗</a>
+        <a href="https://github.com/EMRahman/DeuceLeague">Source ↗</a>
+      </div>
+    </div>
+    <div class="shot">
+      <img src="assets/deuceleague.webp" width="1400" height="995" loading="lazy"
+           alt="DeuceLeague mobile website: home screen, league tables and score reporting">
+    </div>
+  </article>
 
   <div class="section-head" id="origin">
     <h2>Where it started</h2>
