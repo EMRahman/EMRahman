@@ -9,7 +9,7 @@
 1. **[DeuceMate](https://github.com/EMRahman/DeuceMate)**: score on your wrist, log how each point ended to feed an AI coach in ChatGPT, Claude or Gemini, and see how your game is trending. [On the App Store](https://apps.apple.com/app/id6757105622).
 2. **[Somnus](https://github.com/EMRahman/Somnus)**: sleep debt, made visible. A native iOS app built on Apple Watch sleep data. [On the App Store](https://apps.apple.com/app/id6812648966).
 3. **[Farboard](https://github.com/EMRahman/Farboard)**: end-to-end encrypted chess with a friend, near or far. Companion: [ChessTracker](https://github.com/EMRahman/ChessTracker).
-4. **[Side Quest](https://github.com/EMRahman/Games)**: a pocket arcade of seven dependency-free browser games for desktop, iPhone and iPad: Northstar (Battleship), Asteroids, Fourfold (Connect Four), Kado (Go), Recall Club, Neon Coil and 3210 Snake. [Play it](https://emrahman.github.io/Games/).
+4. **[Side Quest](https://github.com/EMRahman/Games)**: a pocket arcade of twelve dependency-free browser games for desktop, iPhone and iPad: Northstar, Driftbelt, Fourfold, Kado, Boxed In, Linefall, Recall Club, Neon Coil, Pocket Snake, Conquest, Landlord and Iron Routes. [Play it](https://emrahman.github.io/Games/).
 5. **[11+ Vocab Vault](https://github.com/EMRahman/11PlusVocabVault)**: vocabulary practice for 8–11 year olds. Companion: [11+ Maths Vault](https://github.com/EMRahman/11PlusMathsVault).
 6. **[The Small Agent Stack](https://github.com/EMRahman/SmallAgentStack)**: a modular alternative to an all-in-one agent setup.
 
