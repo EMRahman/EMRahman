@@ -17,6 +17,14 @@
 
 **[DeuceLeague](https://github.com/EMRahman/DeuceLeague)**: open-source club tennis league software. It has migrated to Cloudflare (one Worker and one D1 database per club, in place of a Docker and Postgres VPS), completed six simulations of a 150-member club, and reached beta testing.
 
+### Herdr experiments
+
+Three plugins I’m experimenting with for [Herdr](https://github.com/herdrdev/herdr), a terminal workspace for coding agents:
+
+- **[Herdr Web UI](https://github.com/EMRahman/herdr-web-ui)**: my fork of [devswha’s browser and phone client](https://github.com/devswha/herdr-web-ui), adding per-agent context badges and extended quota, spending and credit tracking.
+- **[Herdr Context Monitor](https://github.com/EMRahman/herdr-context-monitor)**: context usage for Claude Code, Codex and Antigravity CLI in the terminal sidebar, also powering the badges in my Web UI fork. Python standard library only.
+- **[Herdr Usage Monitor](https://github.com/EMRahman/herdr-usage-monitor)**: remaining subscription allowances in the tab bar, with a popup for limit breakdowns, reset countdowns and rate-limit credits.
+
 ### Where it started
 
 **[PiOrder](https://github.com/EMRahman/PiOrder)** (2016, hand-coded): a Raspberry Pi till, kitchen printer and online ordering system that ran my father's restaurant. It printed 12,738 orders and was featured in *The MagPi*, issue 57.
