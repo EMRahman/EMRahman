@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ehsan Rahman — Projects</title>
-<meta name="description" content="Selected public projects by Ehsan Rahman: Apple Watch and iOS apps, browser games, real-time chess, learning tools and open-source league software.">
+<meta name="description" content="Selected public projects by Ehsan Rahman: Apple Watch and iOS apps, browser games, real-time chess, learning tools, open-source league software and experimental Herdr plugins.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -162,6 +162,7 @@
   <nav class="links" aria-label="Profile links">
     <a class="btn primary" href="https://github.com/EMRahman">GitHub</a>
     <a class="btn" href="https://emrahman.github.io/website/">Personal site</a>
+    <a class="btn" href="#herdr">Herdr experiments</a>
     <a class="btn" href="#origin">Where it started</a>
   </nav>
 </header>
@@ -353,6 +354,67 @@
            alt="DeuceLeague player website showing the latest player view">
     </div>
   </article>
+
+  <section id="herdr" aria-labelledby="herdr-heading">
+    <div class="section-head">
+      <h2 id="herdr-heading">Herdr experiments</h2>
+      <p>Three plugins I’m experimenting with</p>
+    </div>
+
+    <p class="desc">
+      Tools for <a href="https://github.com/herdrdev/herdr">Herdr</a>, a terminal workspace for
+      coding agents — keeping context, subscription allowances and credits visible while I work.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <h3>Herdr Web UI</h3>
+        <p class="tagline">Agent context and credits, in the browser.</p>
+        <p class="desc">
+          My fork of <a href="https://github.com/devswha/herdr-web-ui">devswha’s herdr-web-ui</a>,
+          a browser and phone client for Herdr. Adds context badges beside each supported agent,
+          plus deeper visibility into rate-limit resets, extra-usage spending and flex credits.
+          The context readings come from the companion Context Monitor plugin.
+        </p>
+        <ul class="tags"><li>Fork</li><li>React</li><li>TypeScript</li><li>Bun</li></ul>
+        <div class="card-links">
+          <a href="https://github.com/EMRahman/herdr-web-ui">My fork ↗</a>
+          <a href="https://github.com/devswha/herdr-web-ui">Upstream ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Herdr Context Monitor</h3>
+        <p class="tagline">Each agent’s context usage, at a glance.</p>
+        <p class="desc">
+          Reads local session transcripts for Claude Code, Codex and Antigravity CLI, then shows
+          context usage beneath each agent in Herdr’s terminal sidebar. The same readings power
+          badges in my Web UI fork, with highlighting above 50% usage.
+        </p>
+        <ul class="tags"><li>Python</li><li>Standard library only</li><li>Context tracking</li></ul>
+        <div class="card-links">
+          <a href="https://github.com/EMRahman/herdr-context-monitor">Source &amp; setup ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Herdr Usage Monitor</h3>
+        <p class="tagline">Know how much subscription allowance is left.</p>
+        <p class="desc">
+          Puts remaining allowances in Herdr’s existing tab bar, with an on-demand popup for
+          limit breakdowns, reset countdowns and rate-limit credits. Supports Claude Code,
+          Codex, Antigravity CLI, Cursor, Grok and GitHub Copilot, with a background poller
+          keeping the readings ready.
+        </p>
+        <ul class="tags"><li>TypeScript</li><li>Bun</li><li>Subscription usage</li></ul>
+        <div class="card-links">
+          <a href="https://github.com/EMRahman/herdr-usage-monitor">Source &amp; setup ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
 
   <div class="section-head" id="origin">
     <h2>Where it started</h2>
