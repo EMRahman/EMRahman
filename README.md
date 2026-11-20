@@ -17,13 +17,12 @@
 
 **[DeuceLeague](https://github.com/EMRahman/DeuceLeague)**: open-source club tennis league software. It has migrated to Cloudflare (one Worker and one D1 database per club, in place of a Docker and Postgres VPS), completed six simulations of a 150-member club, and reached beta testing.
 
-### Herdr experiments
+### Herdr desktop mods
 
-Three plugins I’m experimenting with for [Herdr](https://github.com/herdrdev/herdr), a terminal workspace for coding agents:
+I run my coding agents in the [Herdr desktop app](https://herdr.dev/) and check in on the same sessions with [Herdr on iPhone](https://herdr.dev/mobile/). I’ve retired the old Herdr TUI plugins.
 
-- **[Herdr Web UI](https://github.com/EMRahman/herdr-web-ui)**: my fork of [devswha’s browser and phone client](https://github.com/devswha/herdr-web-ui), adding per-agent context badges and extended quota, spending and credit tracking.
-- **[Herdr Context Monitor](https://github.com/EMRahman/herdr-context-monitor)**: context usage for Claude Code, Codex and Antigravity CLI in the terminal sidebar, also powering the badges in my Web UI fork. Python standard library only.
-- **[Herdr Usage Monitor](https://github.com/EMRahman/herdr-usage-monitor)**: remaining subscription allowances in the tab bar, with a popup for limit breakdowns, reset countdowns and rate-limit credits.
+- **[Herdr Context Monitor](https://github.com/EMRahman/herdr-context-monitor)** shows how full each Claude Code and Codex agent’s context window is, beneath the Agents list or in a floating window.
+- **[Herdr Usage Monitor](https://github.com/EMRahman/herdr-usage-monitor)** shows remaining AI subscription allowances in the sidebar, with a detailed view of limits, reset times and credits.
 
 ### Where it started
 
