@@ -19,10 +19,11 @@
 
 ### Herdr desktop mods
 
-I run my coding agents in the [Herdr desktop app](https://herdr.dev/) and check in on the same sessions with [Herdr on iPhone](https://herdr.dev/mobile/). I’ve retired the old Herdr TUI plugins.
+The [Herdr desktop app](https://herdr.dev/) gives coding agents such as Claude Code, Codex, Antigravity (agy) and Pi a shared workspace. I check in on the same sessions with [Herdr on iPhone](https://herdr.dev/mobile/). I’ve retired the old Herdr TUI plugins.
 
-- **[Herdr Context Monitor](https://github.com/EMRahman/herdr-context-monitor)** shows how full each Claude Code and Codex agent’s context window is, beneath the Agents list or in a floating window.
-- **[Herdr Usage Monitor](https://github.com/EMRahman/herdr-usage-monitor)** shows remaining AI subscription allowances in the sidebar, with a detailed view of limits, reset times and credits.
+- **[Herdr Prompts](https://github.com/EMRahman/herdr-prompts)** keeps recurring prompts in the sidebar. Click one to paste it into the active pane for editing, or use Send to submit it immediately.
+- **[Herdr Context Monitor](https://github.com/EMRahman/herdr-context-monitor)** shows how full the context window is for each supported agent session, beneath the Agents list or in a floating window.
+- **[Herdr Usage Monitor](https://github.com/EMRahman/herdr-usage-monitor)** shows the remaining allowance for each supported AI subscription in the sidebar, with a detailed view of limits, reset times and credits.
 
 ### Where it started
 

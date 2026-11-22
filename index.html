@@ -361,18 +361,33 @@
     </div>
 
     <p class="desc">
-      I run my coding agents in the <a href="https://herdr.dev/">Herdr desktop app</a> and check
-      in on the same sessions with <a href="https://herdr.dev/mobile/">Herdr on iPhone</a>.
+      The <a href="https://herdr.dev/">Herdr desktop app</a> gives coding agents such as Claude
+      Code, Codex, Antigravity (agy) and Pi a shared workspace. I check in on the same sessions
+      with <a href="https://herdr.dev/mobile/">Herdr on iPhone</a>.
       I’ve retired the old Herdr TUI plugins.
     </p>
 
     <div class="grid">
 
       <article class="card">
-        <h3>Herdr Context Monitor</h3>
-        <p class="tagline">Each agent’s context usage, at a glance.</p>
+        <h3>Herdr Prompts</h3>
+        <p class="tagline">Reuse a saved prompt in the active pane.</p>
         <p class="desc">
-          Shows how full each Claude Code and Codex agent’s context window is, beneath the Agents
+          Save recurring prompts in the sidebar and drag them into the order you want. Click a
+          prompt to paste it into the active terminal or agent pane for editing, or use Send to
+          submit it immediately.
+        </p>
+        <ul class="tags"><li>JavaScript</li><li>Saved prompts</li></ul>
+        <div class="card-links">
+          <a href="https://github.com/EMRahman/herdr-prompts">Source &amp; setup ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Herdr Context Monitor</h3>
+        <p class="tagline">See which sessions are closest to filling up.</p>
+        <p class="desc">
+          Shows how full the context window is for each supported agent session, beneath the Agents
           list or in a floating window. The fullest sessions appear first, and you can click a row
           to jump to that agent.
         </p>
@@ -386,9 +401,9 @@
         <h3>Herdr Usage Monitor</h3>
         <p class="tagline">Know how much subscription allowance is left.</p>
         <p class="desc">
-          Shows remaining AI subscription allowances at the bottom of Herdr’s sidebar. Click the
-          readout for limit breakdowns, reset times and credits, and see which allowances are on
-          track to reset with usage left over.
+          Shows the remaining allowance for each supported AI subscription at the bottom of Herdr’s
+          sidebar. Click the readout for limit breakdowns, reset times and credits, and see which
+          allowances are on track to reset with usage left over.
         </p>
         <ul class="tags"><li>TypeScript</li><li>Bun</li><li>Subscription usage</li></ul>
         <div class="card-links">
