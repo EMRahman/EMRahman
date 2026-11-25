@@ -126,7 +126,13 @@
     .grid { grid-template-columns: 1fr 1fr; }
     .grid .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
   }
-  .grid .card { padding: 24px; display: flex; flex-direction: column; }
+  .grid .card { display: flex; flex-direction: column; }
+  .grid .card-content { flex: 1; padding: 24px; display: flex; flex-direction: column; }
+  .project-preview { width: 100%; border-bottom: 1px solid var(--line); }
+  @media (min-width: 680px) {
+    #herdr .card:last-child:nth-child(odd) { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+    #herdr .card:last-child:nth-child(odd) .project-preview { border: 0; }
+  }
   .grid .card h3 { font-size: 22px; }
   .grid .card .card-links { margin-top: auto; }
   .companion { font-size: 14px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; margin: 0 0 16px; }
@@ -134,7 +140,11 @@
   /* Origin */
   .origin { display: grid; grid-template-columns: 1fr; }
   .origin .body { padding: 28px 24px; }
-  .origin .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .origin .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; align-content: center; background: var(--bg); }
+  .origin figure { position: relative; margin: 0; }
+  .origin figure:first-child { grid-column: 1 / -1; }
+  .origin figure img { width: 100%; }
+  .origin figcaption { position: absolute; left: 8px; bottom: 8px; padding: 2px 8px; border-radius: 4px; color: white; background: rgba(0, 0, 0, .8); font-size: 13px; }
   @media (min-width: 860px) {
     .origin { grid-template-columns: 1fr 1.2fr; }
     .origin .body { padding: 36px; }
@@ -236,88 +246,104 @@
   <div class="grid">
 
     <article class="card">
-      <div class="rank">03</div>
-      <h3>Farboard</h3>
-      <p class="tagline">Chess with a friend, near or far.</p>
-      <p class="desc">
-        Create an invite, your opponent scans a QR code, and you each play on your own device.
-        End-to-end encrypted moves, take-back and draw requests, and games that survive reloads,
-        sleeping phones and patchy networks.
-      </p>
-      <p class="companion">
-        Companion: <a href="https://emrahman.github.io/ChessTracker/">ChessTracker</a> mirrors a game
-        played with real pieces on a real table — legal moves, notation and material count, no engine.
-      </p>
-      <ul class="tags"><li>JavaScript</li><li>Cloudflare Workers</li><li>E2E encryption</li></ul>
-      <div class="card-links">
-        <a href="https://farboard.ehsanr-web.workers.dev/">Play ↗</a>
-        <a href="https://github.com/EMRahman/Farboard">Source ↗</a>
+      <img class="project-preview" src="assets/farboard.webp" width="1350" height="1054" loading="lazy"
+           alt="A Farboard chess game with legal moves highlighted and a conversation beside the board">
+      <div class="card-content">
+        <div class="rank">03</div>
+        <h3>Farboard</h3>
+        <p class="tagline">Chess with a friend, near or far.</p>
+        <p class="desc">
+          Create an invite, your opponent scans a QR code, and you each play on your own device.
+          End-to-end encrypted moves, take-back and draw requests, and games that survive reloads,
+          sleeping phones and patchy networks.
+        </p>
+        <p class="companion">
+          Companion: <a href="https://emrahman.github.io/ChessTracker/">ChessTracker</a> mirrors a game
+          played with real pieces on a real table — legal moves, notation and material count, no engine.
+        </p>
+        <ul class="tags"><li>JavaScript</li><li>Cloudflare Workers</li><li>E2E encryption</li></ul>
+        <div class="card-links">
+          <a href="https://farboard.ehsanr-web.workers.dev/">Play ↗</a>
+          <a href="https://github.com/EMRahman/Farboard">Source ↗</a>
+        </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="rank">04</div>
-      <h3>Side Quest</h3>
-      <p class="tagline">A pocket arcade of twelve browser games.</p>
-      <p class="desc">
-        Each game is a single, self-contained HTML file for desktop, iPhone and iPad, with mouse,
-        keyboard or touch support — no installs, accounts, build step or dependencies.
-      </p>
-      <p class="companion">
-        The line-up:
-        <a href="https://emrahman.github.io/Games/northstar.html">Northstar</a>,
-        <a href="https://emrahman.github.io/Games/driftbelt.html">Driftbelt</a>,
-        <a href="https://emrahman.github.io/Games/fourfold.html">Fourfold</a>,
-        <a href="https://emrahman.github.io/Games/go.html">Kado</a>,
-        <a href="https://emrahman.github.io/Games/dots_and_boxes.html">Boxed In</a>,
-        <a href="https://emrahman.github.io/Games/linefall.html">Linefall</a>,
-        <a href="https://emrahman.github.io/Games/memory_match.html">Recall Club</a>,
-        <a href="https://emrahman.github.io/Games/snake.html">Neon Coil</a>,
-        <a href="https://emrahman.github.io/Games/pocket_snake.html">Pocket Snake</a>,
-        <a href="https://emrahman.github.io/Games/conquest.html">Conquest</a>,
-        <a href="https://emrahman.github.io/Games/landlord.html">Landlord</a> and
-        <a href="https://emrahman.github.io/Games/iron_routes.html">Iron Routes</a>.
-      </p>
-      <ul class="tags"><li>Vanilla JS</li><li>Single-file HTML</li><li>No build step</li><li>Zero dependencies</li><li>Touch ready</li></ul>
-      <div class="card-links">
-        <a href="https://emrahman.github.io/Games/">Play ↗</a>
-        <a href="https://github.com/EMRahman/Games">Source ↗</a>
+      <img class="project-preview" src="assets/sidequest.webp" width="1350" height="1013" loading="lazy"
+           alt="Side Quest’s arcade with quick-launch buttons and previews of Northstar and Driftbelt">
+      <div class="card-content">
+        <div class="rank">04</div>
+        <h3>Side Quest</h3>
+        <p class="tagline">A pocket arcade of twelve browser games.</p>
+        <p class="desc">
+          Each game is a single, self-contained HTML file for desktop, iPhone and iPad, with mouse,
+          keyboard or touch support — no installs, accounts, build step or dependencies.
+        </p>
+        <p class="companion">
+          The line-up:
+          <a href="https://emrahman.github.io/Games/northstar.html">Northstar</a>,
+          <a href="https://emrahman.github.io/Games/driftbelt.html">Driftbelt</a>,
+          <a href="https://emrahman.github.io/Games/fourfold.html">Fourfold</a>,
+          <a href="https://emrahman.github.io/Games/go.html">Kado</a>,
+          <a href="https://emrahman.github.io/Games/dots_and_boxes.html">Boxed In</a>,
+          <a href="https://emrahman.github.io/Games/linefall.html">Linefall</a>,
+          <a href="https://emrahman.github.io/Games/memory_match.html">Recall Club</a>,
+          <a href="https://emrahman.github.io/Games/snake.html">Neon Coil</a>,
+          <a href="https://emrahman.github.io/Games/pocket_snake.html">Pocket Snake</a>,
+          <a href="https://emrahman.github.io/Games/conquest.html">Conquest</a>,
+          <a href="https://emrahman.github.io/Games/landlord.html">Landlord</a> and
+          <a href="https://emrahman.github.io/Games/iron_routes.html">Iron Routes</a>.
+        </p>
+        <ul class="tags"><li>Vanilla JS</li><li>Single-file HTML</li><li>No build step</li><li>Zero dependencies</li><li>Touch ready</li></ul>
+        <div class="card-links">
+          <a href="https://emrahman.github.io/Games/">Play ↗</a>
+          <a href="https://github.com/EMRahman/Games">Source ↗</a>
+        </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="rank">05</div>
-      <h3>11+ Vocab Vault</h3>
-      <p class="tagline">Vocabulary practice for 8–11 year olds.</p>
-      <p class="desc">
-        497 curated words for 11+ creative writing, with definitions, British-English audio,
-        six quiz types, mastery tracking and a library of 35 short stories that together use
-        every word. Zero dependencies.
-      </p>
-      <p class="companion">
-        Companion: <a href="https://emrahman.github.io/11PlusMathsVault/">11+ Maths Vault</a> —
-        “Walk Mode” verbal questions on the go, “Desk Mode” written ones at home.
-      </p>
-      <ul class="tags"><li>Vanilla JS</li><li>No build step</li><li>Offline progress</li></ul>
-      <div class="card-links">
-        <a href="https://emrahman.github.io/11PlusVocabVault/">Open app ↗</a>
-        <a href="https://github.com/EMRahman/11PlusVocabVault">Source ↗</a>
+      <img class="project-preview" src="assets/vocabvault.webp" width="1350" height="1020" loading="lazy"
+           alt="The word card for “Luminous” with its definition, example sentence, synonyms and antonyms">
+      <div class="card-content">
+        <div class="rank">05</div>
+        <h3>11+ Vocab Vault</h3>
+        <p class="tagline">Vocabulary practice for 8–11 year olds.</p>
+        <p class="desc">
+          497 curated words for 11+ creative writing, with definitions, British-English audio,
+          six quiz types, mastery tracking and a library of 35 short stories that together use
+          every word. Zero dependencies.
+        </p>
+        <p class="companion">
+          Companion: <a href="https://emrahman.github.io/11PlusMathsVault/">11+ Maths Vault</a> —
+          “Walk Mode” verbal questions on the go, “Desk Mode” written ones at home.
+        </p>
+        <ul class="tags"><li>Vanilla JS</li><li>No build step</li><li>Offline progress</li></ul>
+        <div class="card-links">
+          <a href="https://emrahman.github.io/11PlusVocabVault/">Open app ↗</a>
+          <a href="https://github.com/EMRahman/11PlusVocabVault">Source ↗</a>
+        </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="rank">06</div>
-      <h3>The Small Agent Stack</h3>
-      <p class="tagline">A modular alternative to an all-in-one agent setup.</p>
-      <p class="desc">
-        A plain-language guide to replacing a bundled OpenClaw install with independent parts —
-        Pi for the agent and sessions, cron for schedules, Telegram for messaging, cost tracking —
-        plus a migration prompt and a sourced essay on the trade-offs.
-      </p>
-      <ul class="tags"><li>AI agents</li><li>Research</li><li>Static site + tests</li></ul>
-      <div class="card-links">
-        <a href="https://emrahman.github.io/SmallAgentStack/">Read the guide ↗</a>
-        <a href="https://github.com/EMRahman/SmallAgentStack">Source ↗</a>
+      <img class="project-preview" src="assets/small-agent-stack.webp" width="1636" height="1256" loading="lazy"
+           alt="Pi at the centre of the stack, with web access, scheduled tasks, chat and local session history">
+      <div class="card-content">
+        <div class="rank">06</div>
+        <h3>The Small Agent Stack</h3>
+        <p class="tagline">A modular alternative to an all-in-one agent setup.</p>
+        <p class="desc">
+          A plain-language guide to replacing a bundled OpenClaw install with independent parts —
+          Pi for the agent and sessions, cron for schedules, Telegram for messaging, cost tracking —
+          plus a migration prompt and a sourced essay on the trade-offs.
+        </p>
+        <ul class="tags"><li>AI agents</li><li>Research</li><li>Static site + tests</li></ul>
+        <div class="card-links">
+          <a href="https://emrahman.github.io/SmallAgentStack/">Read the guide ↗</a>
+          <a href="https://github.com/EMRahman/SmallAgentStack">Source ↗</a>
+        </div>
       </div>
     </article>
 
@@ -370,44 +396,56 @@
     <div class="grid">
 
       <article class="card">
-        <h3>Herdr Prompts</h3>
-        <p class="tagline">Reuse a saved prompt in the active pane.</p>
-        <p class="desc">
-          Save recurring prompts in the sidebar and drag them into the order you want. Click a
-          prompt to paste it into the active terminal or agent pane for editing, or use Send to
-          submit it immediately.
-        </p>
-        <ul class="tags"><li>JavaScript</li><li>Saved prompts</li></ul>
-        <div class="card-links">
-          <a href="https://github.com/EMRahman/herdr-prompts">Source &amp; setup ↗</a>
+        <img class="project-preview" src="assets/herdr-prompts.jpg" width="1120" height="700" loading="lazy"
+             alt="The saved Review PR prompt in the sidebar and its text in the active pane">
+        <div class="card-content">
+          <h3>Herdr Prompts</h3>
+          <p class="tagline">Reuse a saved prompt in the active pane.</p>
+          <p class="desc">
+            Save recurring prompts in the sidebar and drag them into the order you want. Click a
+            prompt to paste it into the active terminal or agent pane for editing, or use Send to
+            submit it immediately.
+          </p>
+          <ul class="tags"><li>JavaScript</li><li>Saved prompts</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/EMRahman/herdr-prompts">Source &amp; setup ↗</a>
+          </div>
         </div>
       </article>
 
       <article class="card">
-        <h3>Herdr Context Monitor</h3>
-        <p class="tagline">See which sessions are closest to filling up.</p>
-        <p class="desc">
-          Shows how full the context window is for each supported agent session, beneath the Agents
-          list or in a floating window. The fullest sessions appear first, and you can click a row
-          to jump to that agent.
-        </p>
-        <ul class="tags"><li>Python</li><li>Standard library only</li><li>Context tracking</li></ul>
-        <div class="card-links">
-          <a href="https://github.com/EMRahman/herdr-context-monitor">Source &amp; setup ↗</a>
+        <img class="project-preview" src="assets/herdr-context-monitor.jpg" width="1120" height="700" loading="lazy"
+             alt="Sessions ranked by context usage, with a token count for the highlighted session">
+        <div class="card-content">
+          <h3>Herdr Context Monitor</h3>
+          <p class="tagline">See which sessions are closest to filling up.</p>
+          <p class="desc">
+            Shows how full the context window is for each supported agent session, beneath the Agents
+            list or in a floating window. The fullest sessions appear first, and you can click a row
+            to jump to that agent.
+          </p>
+          <ul class="tags"><li>Python</li><li>Standard library only</li><li>Context tracking</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/EMRahman/herdr-context-monitor">Source &amp; setup ↗</a>
+          </div>
         </div>
       </article>
 
       <article class="card">
-        <h3>Herdr Usage Monitor</h3>
-        <p class="tagline">Know how much subscription allowance is left.</p>
-        <p class="desc">
-          Shows the remaining allowance for each supported AI subscription at the bottom of Herdr’s
-          sidebar. Click the readout for limit breakdowns, reset times and credits, and see which
-          allowances are on track to reset with usage left over.
-        </p>
-        <ul class="tags"><li>TypeScript</li><li>Bun</li><li>Subscription usage</li></ul>
-        <div class="card-links">
-          <a href="https://github.com/EMRahman/herdr-usage-monitor">Source &amp; setup ↗</a>
+        <img class="project-preview" src="assets/herdr-usage-monitor.jpg" width="1120" height="700" loading="lazy"
+             alt="Remaining subscription allowances, burndown charts and token usage by model">
+        <div class="card-content">
+          <h3>Herdr Usage Monitor</h3>
+          <p class="tagline">Know how much subscription allowance is left.</p>
+          <p class="desc">
+            Shows the remaining allowance for each supported AI subscription at the bottom of Herdr’s
+            sidebar. Click the readout for limit breakdowns, reset times and credits, and see which
+            allowances are on track to reset with usage left over.
+          </p>
+          <ul class="tags"><li>TypeScript</li><li>Bun</li><li>Subscription usage</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/EMRahman/herdr-usage-monitor">Source &amp; setup ↗</a>
+          </div>
         </div>
       </article>
 
@@ -420,9 +458,22 @@
   </div>
 
   <article class="card origin">
-    <div class="photo">
-      <img src="assets/piorder.webp" width="624" height="434" loading="lazy"
-           alt="A Pipsta thermal printer on a Raspberry Pi printing order tickets in the restaurant kitchen">
+    <div class="photos">
+      <figure>
+        <img src="assets/piorder.webp" width="624" height="434" loading="lazy"
+             alt="A Pipsta thermal printer on a Raspberry Pi printing order tickets in the restaurant kitchen">
+        <figcaption>Kitchen printer</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/piorder-bar.jpg" width="640" height="480" loading="lazy"
+             alt="Three active tablets and a receipt printer on the restaurant bar">
+        <figcaption>Bar counter</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/piorder-tablet.jpg" width="640" height="480" loading="lazy"
+             alt="A waiter holding a tablet with controls for sending orders to the kitchen and bar">
+        <figcaption>Waiter’s tablet</figcaption>
+      </figure>
     </div>
     <div class="body">
       <h3>PiOrder</h3>
