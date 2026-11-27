@@ -24,6 +24,7 @@ The [Herdr desktop app](https://herdr.dev/) gives coding agents such as Claude C
 - **[Herdr Prompts](https://github.com/EMRahman/herdr-prompts)** keeps recurring prompts in the sidebar. Click one to paste it into the active pane for editing, or use Send to submit it immediately.
 - **[Herdr Context Monitor](https://github.com/EMRahman/herdr-context-monitor)** shows how full the context window is for each supported agent session, beneath the Agents list or in a floating window.
 - **[Herdr Usage Monitor](https://github.com/EMRahman/herdr-usage-monitor)** shows the remaining allowance for each supported AI subscription in the sidebar, with a detailed view of limits, reset times and credits.
+- **[Herdr Usage Queue](https://github.com/EMRahman/herdr-usage-queue)** queues coding-agent jobs and uses Usage Monitor’s allowance data to launch approved jobs when a subscription has room.
 
 ### Where it started
 
